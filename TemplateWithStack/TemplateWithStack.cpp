@@ -17,19 +17,20 @@ private:
 	unsigned int sp;	//栈内的指针
 	Type* data;			//存放栈的数据
 };
+
 //Stack构造
 template<typename Type>
 Stack<Type>::Stack(unsigned int size) 
 {
-	this->size = size;	//栈的总大小
-	data = new Type[size]; //(Stack<Type>*)malloc(sizeof(Stack<Type>));//;要存放到栈数据的大小，c++新的写法 new Type[size];
-	sp = 0;				//站内的指针指向
+	this->size = size;		//栈的总大小
+	data = new Type[size];	//(Stack<Type>*)malloc(sizeof(Stack<Type>));//;要存放到栈数据的大小，c++新的写法 new Type[size];
+	sp = 0;					//站内的指针指向
 }
 //析构函数
 template<typename Type>
 Stack<Type>::~Stack()
 {
-	free(data);
+	free(data);				//c++ 写法delet []data;
 }
 
 //push方法实现
@@ -55,15 +56,15 @@ int main()
 	charStack.Push('C');
 	*/
 
-	Stack<int> charStack(100);
+	Stack<int> intStack(100);
 
-	charStack.Push(1);
-	charStack.Push(2);
-	charStack.Push(3);
+	intStack.Push(1);
+	intStack.Push(2);
+	intStack.Push(3);
 
-	cout << charStack.pop() << endl;
-	cout << charStack.pop() << endl;
-	cout << charStack.pop() << endl;
+	cout << intStack.pop() << endl;
+	cout << intStack.pop() << endl;
+	cout << intStack.pop() << endl;
 
 	return 0;
 	
