@@ -6,12 +6,10 @@ template<typename Type>
 class Stack
 {
 public:
-
 	Stack(unsigned int size = 100);//默认构造的栈的默认大小是100
 	~Stack();
 	void Push(Type value);
 	Type pop();
-
 private:
 	unsigned int size;	//栈的大小
 	unsigned int sp;	//栈内的指针
@@ -30,7 +28,7 @@ Stack<Type>::Stack(unsigned int size)
 template<typename Type>
 Stack<Type>::~Stack()
 {
-	free(data);				//c++ 写法delet []data;
+	delet[]data;			//c++ 写法delet []data;
 }
 
 //push方法实现

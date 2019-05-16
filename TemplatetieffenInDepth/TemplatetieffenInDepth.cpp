@@ -18,7 +18,6 @@ private:
 	ListNode<Type>* next;
 };
 
-
 template<typename Type>//在定义类的时候要先在这里模板声明，因为是模板所以fist和last可以是任何数据类型。
 class List
 {
@@ -56,6 +55,7 @@ bool List<Type>::push_back(Type x)
 
 	last->next = s;
 	last = s;
+	size++;
 	return true;
 }
 
@@ -71,7 +71,6 @@ void List<Type>::Show_List()const
 	}
 	cout << "Nul." << endl;
 }
-
 
 int main()
 {
