@@ -45,10 +45,11 @@ public:
 
 };
 
+//Class D 派生类(Vererbung)
 class D :public Base1, public Base2, public Base3
 {
-public://当用缺省值时Base1(int x=0):m_x(x)就可以省略：
-	//Base1(data),Base2(data),Base3(data),b1(data),b2(data),b3(data)
+public://当用父类参数列表值给出时像这样：Base1(int x=0):m_x(x)，那么派生类D(int data)后面的的初始化就可以省略：
+	//D(int data):Base1(data),Base2(data),Base3(data),b1(data),b2(data),b3(data)
 	D(int data):Base1(data),Base2(data),Base3(data),b1(data),b2(data),b3(data)
 	{
 		cout << "Create D" << endl;
